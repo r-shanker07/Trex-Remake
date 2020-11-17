@@ -44,7 +44,7 @@ function preload(){
 }
 
 function setup() {
-  createCanvas(600, 600);
+  createCanvas(displayWidth, displayHeight);
   
    PLAY = 1;
    END = 0;
@@ -52,27 +52,27 @@ function setup() {
    HARD = 3;
    gameState = PLAY;
 
-  trex = createSprite(50,580,20,50);
+  trex = createSprite(50,displayHeight-20,20,50);
   trex.addAnimation("running", trex_running);
   trex.addAnimation("collided", collided)
   trex.scale = 0.5;
   
-  ground = createSprite(200,580,400,20);
+  ground = createSprite(200,displayHeight-20,400,20);
   ground.addImage("ground",groundImage);
   ground.x = ground.width /2;
   ground.velocityX = -4
   
-  invisibleGround = createSprite(200,590,400,10);
+  invisibleGround = createSprite(200,displayHeight-10,400,10);
   invisibleGround.visible = false;
   
-  gameOver = createSprite(300,450,20,20)
+  gameOver = createSprite(300,displayHeight-150,20,20)
   gameOver.addImage("gameOver", gameOverImage)
 
-  restart = createSprite(300,500,20,20)
+  restart = createSprite(300,displayHeight-100,20,20)
   restart.addImage("restart", restartImage)
   restart.scale = 0.5
 
-  startOver = createSprite(300,430,20,20)
+  startOver = createSprite(300,displayHeight-130,20,20)
   startOver.addImage("startOver", startOverImage)
   startOver.scale = 0.5
 
